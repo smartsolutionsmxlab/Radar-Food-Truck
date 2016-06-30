@@ -1,0 +1,15 @@
+html, body {
+	height: 100%;
+    margin: 0;
+    padding: 0;
+	width: 100%;
+}
+#map {                   
+    height: 67%;
+	width: 100%;
+}
+#tablaImgLrg{
+    left: 10%;     
+	width: 60%;
+	height: 240;
+}

@@ -1,0 +1,31 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "smart.mx.io.cordova.radarfoodtruck"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "smart.mx.io.cordova.radarfoodtruck"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "smart.mx.io.cordova.radarfoodtruck"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "smart.mx.io.cordova.radarfoodtruck"
+        },
+        "cordova-plugin-zip": {
+            "PACKAGE_NAME": "smart.mx.io.cordova.radarfoodtruck"
+        },
+        "plugin.google.maps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyAh47l9Yp6U_Q6cG8-QongVocDSWe0Bc7Q",
+            "PACKAGE_NAME": "smart.mx.io.cordova.radarfoodtruck"
+        }
+    },
+    "dependent_plugins": {}
+}

@@ -1,0 +1,17 @@
+hr {
+	border: 0;
+	color: #f00;
+	background-color: #f00;
+	height: 5px;
+}
+#pageMain {
+	background: url('../img/bg.png') center no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+ul[data-role="listview"].ui-listview >li> a {
+	background:transparent;
+}
+ul[data-role="listview"].ui-listview >li:hover> a {
+	background:transparent;
+}

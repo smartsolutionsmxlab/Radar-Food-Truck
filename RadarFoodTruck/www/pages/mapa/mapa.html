@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../css/mapa.css" />
+    <title>Radar</title>
+</head>
+<body>
+    <img src="../../img/tituloP.png" onclick="window.history.back();" width="100%" height="14%" />
+    <div id="map"></div>
+    <center>
+        <table class="tablaImgLrg" width=60% height=12%>
+            <tr>
+                <td width=10%>
+                    <img src="../../img/icons/icon2.png" onclick="openDetalle2(2);" width=55  height=55/>
+                </td>
+                <td width=10%>
+                    <img src="../../img/icons/icon3.png" onclick="openDetalle2(3);"  width=55  height=55>
+                </td>
+                <td width=10%>
+                    <img src="../../img/icons/icon4.png" onclick="openDetalle2(4);" width=55  height=55/>
+                </td>
+                <td width=10%>
+                    <img src="../../img/icons/icon5.png" onclick="openDetalle2(5);" width=55  height=55/>
+                </td>
+                <td width=10%>
+                    <img src="../../img/icons/icon6.png" onclick="openDetalle2(6);" width=55  height=55/>
+                </td>
+                <td width=10%>
+                    <img src="../../img/icons/icon7.png" onclick="openDetalle2(7);" width=55  height=55/>
+                </td>
+            </tr>
+        </table>
+    </center>
+    <script>
+                function initMap() {
+          function openDetalle(i) {
+              window.location = "../common/detalle.html?d=" + i;
+          }
+  
+          var myLatLng = { lat: 19.444827, lng: -99.167437 };
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: myLatLng
+          });
+
+          var numTrucks = 0;
+          console.log("Buscando localmente antes de petición en Mapa")
+          var jsonFile = JSON.parse(localStorage.getItem('trucks'));
+          console.log(jsonFile.trucks);
+            //alert("Se buscarán los datos de los trucks");
+          var trucks = jsonFile.trucks;
+          console.log(trucks.length)
+          //var menu = "<ul data-role='listview' data-inset='false'>";
+          var location = "file:///data/data/smart.mx.io.cordova.radarfoodtruck/files/files//imagenesTrucks/";
+          var markers = new Array(trucks.length)
+          var myLatLng2 = { lat: 19.444827, lng: -99.167437 };
+          if (jsonFile != null && trucks.length > 0) {
+              for (i = 0; i < trucks.length; i++) {
+                  var idT = trucks[i].idTruck;
+                  console.log("Creando id:" + idT);
+                  console.log("Creando id:" + trucks[i].status);
+                  if (trucks[i].latitud != "" && trucks[i].status=="1") {
+                      myLatLng2 = { lat: parseFloat(trucks[i].latitud), lng: parseFloat(trucks[i].longitude) };
+                      console.log(trucks[i].nombre + myLatLng2)
+                      markers[i] = new google.maps.Marker({
+                          position: myLatLng2,
+                          customInfo: trucks[i].idTruck,
+                          map: map,
+                          title: trucks[i].nombre,
+                          icon: location + (i + 1) + "s.png"
+                      });
+                      markers[i].addListener('click', function () {
+                          //alert(customInfo)
+                          openDetalle(this.customInfo);
+                      });
+                  }
+              }
+          }
+        }
+
+    </script>
+    <script src="http://maps.googleapis.com/maps/api/js?key= AIzaSyCcyLPmMiWWaRuDRQ6d-udR_glC6Hj7X0w&signed_in=true&callback=initMap"></script>
+    <script src="../../scripts/mapa.js"></script>
+</body>
+</html>

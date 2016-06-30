@@ -1,0 +1,21 @@
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+#click {
+    animation: blink 2s;
+    animation-iteration-count: infinite;
+}
+
+#pageMain {
+	background: url('../img/bg.png') center no-repeat;
+	background-size: cover;
+    background-repeat: no-repeat;
+}

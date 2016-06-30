@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../css/detalle.css" />
+    <title>Detalle</title>
+    
+</head>
+<body>
+	<div data-role="page" id="pageMain">
+	    <img src="../../img/tituloP.png" onclick="window.history.back();" width=100%  height=80px /> 
+	</div>
+    <table class="tablaImgLrg" width=82%  height=12% align="center">    
+         <tr>
+         	<td align="center">
+            	<img id="imagenLarge" src="" class="imgLrg" width=82%  height=190 />    
+            </td>
+         </tr>
+    </table>    
+    <div>
+        <table align="center">
+            <tr align="center">
+                <td><img id="imagenIcono" src="" width="100" height="100" /></td>
+                <td><div id="textoTruck"></div></td>
+            </tr>
+        </table>
+    </div>    
+    <div id="map">
+    	<br>
+    </div>    
+    <table width="80%" height="10%" align="center">
+    	<tr>
+        	<td bgcolor="#4DB6AC"><div id="textoDireccion"></div></td>                
+        </tr>
+    </table>
+    <table border="1" BORDERCOLOR="white" width="80%" height="10%" align="center">
+    	<tr>
+        	<td bgcolor="black"><div id="textoInfo"></div></td>
+        </tr>
+    </table>
+    <table width="80%" height="10%" align="right" >
+    	<tr>
+        	<td ><img src="../../img/icons/fb-logo.png" width="50" height="50" /><div id="textoRedes1"></div></td>
+            <td ><img src="../../img/icons/tw-logo.png" width="50" height="50" /><div id="textoRedes2"></div></td>
+        </tr>
+    </table>    
+    <script src="../../scripts/detalle.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key= AIzaSyCcyLPmMiWWaRuDRQ6d-udR_glC6Hj7X0w&signed_in=true&callback=initMap"></script>    
+</body>
+</html>
